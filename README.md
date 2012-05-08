@@ -14,9 +14,13 @@ It works by adding a class to the html element of your current device.
 ## API
 
 `is(deviceType)` – deviceType &lt;string&gt; of tv|desktop|tablet|mobile. Returns true/false based on current device.
+
 `isDesktop()` `isTablet()` `isTV()` `isMobile()` – sugar around the previous method.
+
 `getType()` — returns current device type
+
 `setType()` – sets current device type and updates html class.
+
 `categorizeType(real, faked)` – Sets a device type as another. E.g. `categorizr.categorizeType('tv', 'desktop')` sets all tv devices to be desktop.
 
 ## Roadmap
