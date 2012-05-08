@@ -1,4 +1,4 @@
-/*! Categorizr.js: Device Detection Scripts | https://github.com/Skookum/license.md */
+/*! Categorizr.js: Device Detection Scripts | https://github.com/Skookum/categorizr.js/blob/master/license.md */
 
 (function (name, context, definition) {
   if (typeof module !== 'undefined') module.exports = definition(name, context, true);

@@ -31,3 +31,11 @@ It works by adding a class to the html element of your current device.
 * Integration with Modernizr
 * Integration with node.js and express
 
+## Committing
+
+Edit `src/*.js` files.
+Run `make` in terminal.
+
+You’ll need the devDependencies and installed for smoosh.
+
+
