@@ -1,10 +1,4 @@
-/*!
- * Categorizr: Device Detection Scripts (c) Skookum Digital Works 2012
- * @author: Dustan Kasten <@iamdustan>
- * @homepage: https://github.com/skookum/categorizr.js
- * @license: MIT
- * Based on https://github.com/bjankord/Categorizr
- */
+/*! Categorizr.js: Device Detection Scripts | https://github.com/Skookum/license.md */
 
 (function (name, context, definition) {
   if (typeof module !== 'undefined') module.exports = definition(name, context, true);
