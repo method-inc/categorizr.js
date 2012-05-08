@@ -1,11 +1,12 @@
 {
     "name": "categorizr"
   , "description": "Device detection script to categorize devices as desktop, tv, tablet, or mobile."
-  , "version": "0.9.0"
+  , "version": "0.9.1"
   , "homepage": "https://github.com/iamdustan/categorizr.js"
   , "author": "Dustan Kasten <dustan@skookum.com> (http://twitter.com/iamdustan)"
   , "contributors": [
       "Brett Jankord <> (https://brettjankord.com)"
+    , "Jon Roes <> (http://blog.jroes.net)"
     ]
   , "keywords": ["ender", "browser", "node", "device detection", "responsive"]
   , "main": "./categorizr.js"

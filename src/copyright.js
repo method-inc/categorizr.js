@@ -1,6 +1,7 @@
 /*!
- * Categorizr: Device Detection Scripts (c) Dustan Kasten 2012
- * https://github.com/iamdustan/categorizr.js
- * License MIT
+ * Categorizr: Device Detection Scripts (c) Skookum Digital Works 2012
+ * @author: Dustan Kasten <@iamdustan>
+ * @homepage: https://github.com/skookum/categorizr.js
+ * @license: MIT
  * Based on https://github.com/bjankord/Categorizr
  */

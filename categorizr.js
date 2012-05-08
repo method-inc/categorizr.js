@@ -1,7 +1,8 @@
 /*!
- * Categorizr: Device Detection Scripts (c) Dustan Kasten 2012
- * https://github.com/iamdustan/categorizr.js
- * License MIT
+ * Categorizr: Device Detection Scripts (c) Skookum Digital Works 2012
+ * @author: Dustan Kasten <@iamdustan>
+ * @homepage: https://github.com/skookum/categorizr.js
+ * @license: MIT
  * Based on https://github.com/bjankord/Categorizr
  */
 
@@ -20,7 +21,7 @@
                 // tv-based gaming console
               : ua.match(/Xbox|PLAYSTATION.3|Wii/i) ? 'tv'
                 // tablet
-              : ua.match(/iP(a|ro)d/i) || ua.match(/tablet/i) && !ua.match(/RX-34/i) || ua.match(/FOLIO/i) ? 'tablet'
+              : ua.match(/iP(a|o)d/i) || ua.match(/tablet/i) && !ua.match(/RX-34/i) || ua.match(/FOLIO/i) ? 'tablet'
                 // android tablet
               : ua.match(/Linux/i) && ua.match(/Android/i) && !ua.match(/Fennec|mobi|HTC.Magic|HTCX06HT|Nexus.One|SC-02B|fone.945/i) ? 'tablet'
                 // Kindle or Kindle Fire
