@@ -25,7 +25,7 @@ It works by adding a class to the html element of your current device.
 
 ## Roadmap
 
-* Get Brett Jankford’s blessing on the port.
+* Get Brett Jankord’s blessing on the port.
 * Publish to npm for ender consumption
 * Tests and community feedback
 * Integration with Modernizr
