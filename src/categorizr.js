@@ -1,12 +1,13 @@
 (function (name, context, definition) {
-  if (typeof module !== 'undefined') module.exports = definition(name, context, true);
+  if (typeof module !== 'undefined') module.exports = definition(name, context);
   else if (typeof define === 'function' && typeof define.amd  === 'object') define(definition);
   else context[name] = definition(name, context);
-}('categorizr', this, function(name, context, isNode) {
+}('categorizr', this, function(name, context) {
 
   var ua = navigator.userAgent
+    , isBrowser = Window && context instanceof Window
+    , isNode = !isBrowser
     , docElement = isNode ? null : document.documentElement
-    , isBrowser = !isNode
 
                 // smart tv
     , device =  ua.match(/GoogleTV|SmartTV|Internet.TV|NetCast|NETTV|AppleTV|boxee|Kylo|Roku|DLNADOC|CE\-HTML/i) ? 'tv'
