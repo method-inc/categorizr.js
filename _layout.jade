@@ -6,7 +6,7 @@ html
 
     meta(name='viewport', content='width=device-width')
     title Jadeplate
-    link(rel='stylesheet', href='/_assets/css/style.css')
+    link(rel='stylesheet', href='./_assets/css/style.css')
   body
     div.visuallyhidden
       a(href="#main-menu") Skip to navigation
@@ -27,6 +27,6 @@ html
     section#main(role='application')
       block content
 
-    script(src="/_assets/js/libs/ender.js")
-    script(src="/_assets/js/app.js")
+    script(src="./_assets/js/libs/ender.js")
+    script(src="./_assets/js/app.js")
     block scripts
