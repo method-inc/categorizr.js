@@ -14,92 +14,11 @@ html
   display none
 .tab-active
   display block
+p
+  color #404040
+  line-height 1.223
 
 /* @end general */
-/* @group general */
-.well
-  padding 1em
-  border 1px solid #ccc
-  background #eee
-  box-shadow inset 0 5px 5px rgba(0,0,0, 0.2)
-
-.datagrid
-  th, td
-    padding 0.5em
-    &.sortable
-      cursor pointer
-  th
-    background #333
-    color #fff
-  td
-    border 1px solid #ccc
-.delete
-  display inline-block
-  width 1em
-  height 1em
-
-.fast-confirm
-  position absolute
-  top -3em
-  left -50%
-  white-space nowrap
-  background #fff
-  padding 1em
-  &:after
-    content ''
-    display block
-    border-color #fff transparent transparent transparent
-    border-style solid
-    border-width 1em
-    height 0
-    width 0
-    position absolute
-    bottom -2em
-    left 50%
-    margin-left -1em
-
-.modal
-  //display none
-  opacity 0
-  width 40%
-  position fixed
-  z-index 10
-  left 30%
-  right 30%
-  top 20%
-  padding 2em
-  background #fff
-  box-shadow 0 0 10px rgba(0,0,0, 0.4)
-  transform scale(0.2,0.2)
-  transition all 0.3s ease-out
-  &.show
-    //display block
-    opacity 1
-    transform scale(1,1)
-
-.modal-overlay
-  position fixed
-  top 0
-  left 0
-  z-index 9
-  background #000
-  opacity 0
-  transition opacity 0.5s ease-out
-body.with-modal
-  /*
-  #main *, #header *
-    color transparent !important
-    text-shadow 0 0 8px grey !important
-    text-decoration none
-  */
-  .modal-overlay
-    left 0
-    right 0
-    top 0
-    bottom 0
-    opacity 0.5
-/* @end general */
-
 /* @group desktop layout */
 
 .desktop
