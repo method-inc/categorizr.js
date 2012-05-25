@@ -1,0 +1,21 @@
+{
+  "author": "Dustan Kasten",
+  "name": "Jadeplate",
+  "description": "Boilerplate for creating digital wireframes using jade and stylus.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/iamdustan/jadeplate",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:iamdustan/jadeplate.git"
+  },
+  "engines": {},
+  "dependencies": {
+    "ender": "latest"
+  , "stylus": "latest"
+  , "jade": "latest"
+  , "node-static": "latest"
+  },
+  "devDependencies": {},
+  "analyze": false,
+  "scripts": {}
+}

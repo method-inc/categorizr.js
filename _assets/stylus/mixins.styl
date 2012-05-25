@@ -1,0 +1,101 @@
+replace(expr, str, val)
+  expr = clone(expr)
+  for e, i in expr
+    if str == e
+      expr[i] = val
+  expr
+
+alph(color, pct)
+  pct = pct / 100 if pct > 1
+  if current-property
+    val = current-property[1]
+    r_g_b = (red(color) green(color) blue(color))
+    c = replace(val, '__CALL__', lighten(color, pct))
+    add-property(current-property[0], c)
+    s('rgba(%s,%s,%s,%s)', r_g_b[0], r_g_b[1], r_g_b[2], pct)
+  else
+    error('alph() must be used within a property')
+
+
+// Prefixes the property for various vendors
+vendor(prop, args)
+  -webkit-{prop} args
+  -msie-{prop} args
+  -moz-{prop} args
+  -o-{prop} args
+  {prop} args
+
+two-stop(start, end=start)
+  background -moz-linear-gradient(top, start, end 100%)
+  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,start), color-stop(100%,end))
+  background -webkit-linear-gradient(top, start 0%,end 100%)
+  background -o-linear-gradient(top, start 0%,end 100%)
+  background -ms-linear-gradient(top, start 0%,end 100%)
+  filter s("progid:DXImageTransform.Microsoft.gradient( startColorstr='%s', endColorstr='%s',GradientType=0 )",start,end)
+  background linear-gradient(top, start 0%,end 100%)
+
+two-stop-position(start, end=start, position)
+  background -moz-linear-gradient(top, start, end position)
+  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,start), color-stop(position,end))
+  background -webkit-linear-gradient(top, start 0%,end position)
+  background -o-linear-gradient(top, start 0%,end position)
+  background -ms-linear-gradient(top, start 0%,end position)
+  background linear-gradient(top, start 0%,end position)
+
+two-stop-left(start, end=start)
+  background -moz-linear-gradient(left, start, end 100%)
+  background -webkit-gradient(linear, left top, right top, color-stop(0%,start), color-stop(100%,end))
+  background -webkit-linear-gradient(left, start 0%,end 100%)
+  background -o-linear-gradient(left, start 0%,end 100%)
+  background -ms-linear-gradient(left, start 0%,end 100%)
+  filter s("progid:DXImageTransform.Microsoft.gradient( startColorstr='%s', endColorstr='%s',GradientType=1 )",start,end)
+  background linear-gradient(left, start 0%,end 100%)
+
+two-stop-right(start, end=start, size=100%)
+  background -moz-linear-gradient(right, start, end size)
+  background -webkit-gradient(linear, right top, right top, color-stop(0%,start), color-stop(size,end))
+  background -webkit-linear-gradient(right, start 0%,end size)
+  background -o-linear-gradient(right, start 0%,end size)
+  background -ms-linear-gradient(right, start 0%,end size)
+  filter s("progid:DXImageTransform.Microsoft.gradient( startColorstr='%s', endColorstr='%s',GradientType=1 )",start,end)
+  background linear-gradient(right, start 0%,end size)
+
+
+border-bottom-right-radius(n)
+  -webkit-border-bottom-right-radius n
+  -moz-border-radius-bottomright n
+  border-bottom-right-radius n
+border-bottom-left-radius(n)
+  -webkit-border-bottom-left-radius n
+  -moz-border-radius-bottomleft n
+  border-bottom-left-radius n
+border-top-right-radius(n)
+  -webkit-border-top-right-radius n
+  -moz-border-radius-topright n 
+  border-top-right-radius n
+border-top-left-radius(n)
+  -webkit-border-top-left-radius n
+  -moz-border-radius-topleft n
+  border-top-left-radius n
+
+inner-shadow(n)
+  vendor('box-shadow', unshift(arguments, 'inset'))
+
+inline-block()
+  display -moz-inline-stack
+  display inline-block
+  zoom 1
+  *display inline
+
+
+draggable()
+  cursor hand
+  cursor grab
+  cursor -moz-grab
+  cursor -webkit-grab
+  &.ui-draggable-dragging
+    dragging()
+dragging()
+  cursor grabbing
+  cursor -moz-grabbing
+  cursor -webkit-grabbing

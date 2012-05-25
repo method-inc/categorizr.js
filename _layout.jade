@@ -1,0 +1,32 @@
+!!!5
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+
+    meta(name='viewport', content='width=device-width')
+    title Jadeplate
+    link(rel='stylesheet', href='/_assets/css/style.css')
+  body
+    div.visuallyhidden
+      a(href="#main-menu") Skip to navigation
+      a(href="#main") Skip to content
+
+    header#header(role='masthead')
+      div#banner(role='banner') Categorizr.js
+      nav#main-menu(role='navigation')
+        a.active(href="#home") Home
+        a(href="#about") About
+        a(href="#enjoy") Have Fun
+
+      select#toggler
+        option(selected) Desktop
+        option Tablet
+        option Mobile
+
+    section#main(role='application')
+      block content
+
+    script(src="/_assets/js/libs/ender.js")
+    script(src="/_assets/js/app.js")
+    block scripts

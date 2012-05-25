@@ -1,0 +1,258 @@
+@import nib
+@import 'mixins.styl'
+@import 'normalize.styl'
+
+
+/* @group general */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+html
+  font-family Helvetica
+  height 100%
+  max-height 100%
+
+.tab-window
+  display none
+.tab-active
+  display block
+
+/* @end general */
+/* @group general */
+.well
+  padding 1em
+  border 1px solid #ccc
+  background #eee
+  box-shadow inset 0 5px 5px rgba(0,0,0, 0.2)
+
+.datagrid
+  th, td
+    padding 0.5em
+    &.sortable
+      cursor pointer
+  th
+    background #333
+    color #fff
+  td
+    border 1px solid #ccc
+.delete
+  display inline-block
+  width 1em
+  height 1em
+
+.fast-confirm
+  position absolute
+  top -3em
+  left -50%
+  white-space nowrap
+  background #fff
+  padding 1em
+  &:after
+    content ''
+    display block
+    border-color #fff transparent transparent transparent
+    border-style solid
+    border-width 1em
+    height 0
+    width 0
+    position absolute
+    bottom -2em
+    left 50%
+    margin-left -1em
+
+.modal
+  //display none
+  opacity 0
+  width 40%
+  position fixed
+  z-index 10
+  left 30%
+  right 30%
+  top 20%
+  padding 2em
+  background #fff
+  box-shadow 0 0 10px rgba(0,0,0, 0.4)
+  transform scale(0.2,0.2)
+  transition all 0.3s ease-out
+  &.show
+    //display block
+    opacity 1
+    transform scale(1,1)
+
+.modal-overlay
+  position fixed
+  top 0
+  left 0
+  z-index 9
+  background #000
+  opacity 0
+  transition opacity 0.5s ease-out
+body.with-modal
+  /*
+  #main *, #header *
+    color transparent !important
+    text-shadow 0 0 8px grey !important
+    text-decoration none
+  */
+  .modal-overlay
+    left 0
+    right 0
+    top 0
+    bottom 0
+    opacity 0.5
+/* @end general */
+
+/* @group desktop layout */
+
+.desktop
+  background #efefef
+  padding 1.5em 10%
+  #main
+    background #fff
+    border 1px solid #e0e0e0
+  #main
+    padding 1.5em
+
+  #header
+    position relative
+    padding 0 0 0 13em
+  #banner
+    absolute top left
+    font-size 2em
+    font-weight bold
+    width 6.125em
+  #toggler
+    position absolute
+    top 1em
+    right 0
+
+
+  #main-menu
+    padding-top .625em
+    a
+      inline-block()
+      background #ececec
+      color #9f9f9f
+      line-height 1.8333em
+      padding 0 1.25em
+      border 1px solid transparent
+      text-align center
+      text-decoration none
+      &:focus,
+      &:hover
+        color #606060
+
+      &.active
+        background #fff
+        border 1px solid #e0e0e0
+        border-bottom 2px solid #fff
+        color #000
+        position relative
+        top 1px
+
+
+/* @end navigation */
+/* @group tablet layout */
+
+.tablet
+  background #efefef
+  padding-left 5.5em
+  position relative
+  h1
+    margin-top 0
+  #main
+    background #fff
+    border-bottom 1px solid #e0e0e0
+    padding 1.5em
+
+  #banner
+    position absolute
+    bottom .5em
+    right .5em
+    color #fff
+    font-size 2em
+    font-weight bold
+    text-shadow 0 3px 0 rgba(0,0,0,.1)
+    z-index 3
+  #toggler
+    position absolute
+    right 0
+    top 1em
+
+  #main-menu
+    absolute top left
+    bottom 0
+    background linear-gradient(left, #dd4b39, darken(#dd4b39, 30%))
+    border-right 1px solid darken(#dd4b39, 70%)
+    a
+      background linear-gradient(bottom, darken(#dd4b39, 30%), darken(#dd4b39, 10%))
+      border 1px solid transparent
+      border-bottom-color rgba(255,255,255,.2)
+      border-top-color rgba(0,0,0,.2)
+      box-shadow inset 0 0 2px 2px rgba(0,0,0,.05)
+      color #fff
+      display block
+      font-weight bold
+      height 4.25em
+      padding 1.4em 0
+      width 5.5em
+      text-align center
+      text-decoration none
+      text-shadow 0 -2px 0 rgba(0,0,0,.1)
+      &:focus,
+      &:hover
+        background linear-gradient(top, darken(#dd4b39, 10%), darken(#dd4b39, 10%))
+        box-shadow inset 0 0 4px 4px rgba(255,255,255,.15)
+
+      &.active
+        //background linear-gradient(left, darken(#dd4b39, 30%), darken(#dd4b39, 10%))
+        background transparent
+        box-shadow inset 0 0 2px 2px rgba(0,0,0,.2)
+
+/* @end tablet layout */
+/* @group mobile */
+
+.mobile
+  background #efefef
+  position relative
+  #main
+    background #fff
+    border-bottom 1px solid #e0e0e0
+    padding 1.5em
+
+  #banner
+    background linear-gradient(top, #404040, #101010)
+    color #fff
+    padding .75em 1.5em
+    text-transform uppercase
+    z-index 3
+  #toggler
+    position absolute
+    right 0.5em
+    top 0.5em
+
+  #main-menu
+    background linear-gradient(bottom, darken(#dd4b39, 30%), darken(#dd4b39, 10%))
+    border-bottom 1px solid darken(#dd4b39, 70%)
+    a
+      inline-block()
+      border 1px solid transparent
+      border-right-color rgba(255,255,255,.2)
+      border-left-color rgba(0,0,0,.2)
+      box-shadow inset 0 0 2px 2px rgba(0,0,0,.05)
+      color #fff
+      font-weight bold
+      height 4.25em
+      padding 1.4em 0
+      width 33.33333%
+      text-align center
+      text-decoration none
+      text-shadow 0 -2px 0 rgba(0,0,0,.1)
+      &:focus,
+      &:hover
+        background linear-gradient(top, darken(#dd4b39, 10%), darken(#dd4b39, 10%))
+        box-shadow inset 0 0 4px 4px rgba(255,255,255,.15)
+
+      &.active
+        background linear-gradient(top, darken(#dd4b39, 20%), darken(#dd4b39, 10%))
+        box-shadow inset 0 0 2px 2px rgba(0,0,0,.2)
+
+/* @end mobile */
