@@ -3,6 +3,10 @@
 Categorizr.js is a port of bjankord’s categorizr.php script. There is planned
 support for use within node.js and express as well as with the browser.
 
+## Demo
+
+Check out a demo at [skookum.github.com/categorizr.js](http://skookum.github.com/categorizr.js)
+
 ## Usage
 
 Currently categorizr has a standard ender.js implementation for usage within
