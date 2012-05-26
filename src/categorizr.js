@@ -5,7 +5,8 @@
 }('categorizr', this, function(name, context) {
 
   var ua = navigator.userAgent
-    , isBrowser = Window && context instanceof Window
+      // based on https://github.com/jquery/jquery/blob/master/src/core.js
+    , isBrowser = context != null && context == context.window
     , isNode = !isBrowser
     , docElement = isNode ? null : document.documentElement
 
