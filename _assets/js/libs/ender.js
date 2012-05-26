@@ -2177,7 +2177,7 @@
   }('categorizr', this, function(name, context) {
 
     var ua = navigator.userAgent
-      , isBrowser = Window && context instanceof Window
+      , isBrowser = context != null && context == context.window
       , isNode = !isBrowser
       , docElement = isNode ? null : document.documentElement
 
