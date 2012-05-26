@@ -2,7 +2,7 @@
   * =============================================================
   * Ender: open module JavaScript framework (https://ender.no.de)
   * Build: ender build ender-js qwery bonzo bean categorizr
-  * Packages: ender-js@0.4.3-dev qwery@3.3.8 bonzo@1.0.6 bean@0.4.11-1 categorizr@0.2.1
+  * Packages: ender-js@0.4.3-dev qwery@3.3.8 bonzo@1.0.6 bean@0.4.11-1 categorizr@0.2.2
   * =============================================================
   */
 
@@ -2177,6 +2177,7 @@
   }('categorizr', this, function(name, context) {
 
     var ua = navigator.userAgent
+        // based on https://github.com/jquery/jquery/blob/master/src/core.js
       , isBrowser = context != null && context == context.window
       , isNode = !isBrowser
       , docElement = isNode ? null : document.documentElement
