@@ -1,3 +1,4 @@
+/*global _gaq*/
 (function() {
   var $ = require('ender')
 
@@ -17,6 +18,11 @@
     .delegate('#toggler', 'change', function(e) {
       // manually set the type
       $.setType(this.value.toLowerCase())
+      _gaq.push(['_trackEvent', 'categorize.manual', $.getType()])
     })
+
+  var toggler = $('#toggler')
+  toggler.find('option[value='+$.getType()+']').attr('selected')
+  _gaq.push(['_trackEvent', 'categorize.pageload', $.getType()])
 
 }());
