@@ -20,6 +20,22 @@ your ender build with `ender add categorizr`.
 
 ## API
 
+* `categorizr()`
+  * @return {String} current deviceType. (getter)
+* `categorizr(deviceType)`
+  * @param {String} deviceType. Currently supports `tv`, `desktop`,
+  `tablet`, and `mobile`.
+  * @return {String} current deviceType.
+* `categorizr(actualDevice, categorizeAsDevice)`
+  * @param {String} `actualDevice`. Target device you want to display as
+  another.
+  * @param {String} `categorizeAsDevice`. Device to display as.
+  * @return {String} current deviceType.
+  * Example. `categorize('tv', 'tablet')` -> will categorize all known
+  smart-tv UA’s as a tablet device.
+
+## API if using version 0.2.2 and below
+
 `is(deviceType)` – deviceType &lt;string&gt; of tv|desktop|tablet|mobile. Returns true/false based on current device.
 
 `isDesktop()` `isTablet()` `isTV()` `isMobile()` – sugar around the previous method.
@@ -32,16 +48,17 @@ your ender build with `ender add categorizr`.
 
 ## Roadmap
 
-* Get Brett Jankord’s blessing on the port.
-* Tests and community feedback
-* Integration with Modernizr
-* Integration with node.js and express
+* Get Brett Jankord’s feedback on the project.
+* Functional tests and community feedback.
+* UA and device testing.
+* Research integration with Modernizr.
+* Integration with node.js and express.
 
 ## Committing
 
 Edit `src/*.js` files.
 Run `make` in terminal.
 
-You’ll need the devDependencies and installed for smoosh.
+You’ll need the devDependencies installed for [smoosh.
 
 
