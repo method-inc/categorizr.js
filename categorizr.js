@@ -46,53 +46,52 @@
     , is = function (type) {
         return device === type
       }
-    , categorizr = {
-        is: is
-      , categorize: function () {
-          var args = [].slice.call(arguments, 0)
+    , categorizr = function () {
+        var args = [].slice.call(arguments, 0)
 
-          // previously categorizeType. arg1 = real, arg2 = fake
-          if (args.length === 2) {
-            if (device === args[0]) {
-              device = args[1]
-            }
+        // previously categorizeType. arg1 = real, arg2 = fake
+        if (args.length === 2) {
+          if (device === args[0]) {
+            device = args[1]
           }
-
-          // else set type
-          else if (args.length === 1 && typeof args === 'string') {
-            device = args[0]
-          }
-
-          if (args.length !== 0 ) update()
-
-          // always return device. no args returns device
-          return device
         }
+
+        // else set type
+        else if (args.length === 1 && typeof args === 'string') {
+          device = args[0]
+        }
+
+        if (args.length) _update()
+
+        // always return device. no args returns device
+        return device
       }
+
+  categorizr.is = is
 
   // set quick access properties
   // e.g. categorizr.isTv => false
   //      categorizr.isDesktop => true
   //      categorizr.isTablet => false
   //      categorizr.isMobile => false
-  function setDeviceBooleans () {
+  function _setDeviceBooleans () {
     var i = deviceTypes.length
     while (i--) categorizr['is'+deviceTypes[i]] = is(deviceTypes[i].toLowerCase())
   }
 
-  function setClassName () {
+  function _setClassName () {
     if (isBrowser) {
       docElement.className = docElement.className.replace(/(^|\s)desktop|tablet|tv|mobile(\s|$)/, '$1$2') + (' ' + device)
     }
   }
 
-  function update () {
-    setDeviceBooleans()
-    setClassName()
+  function _update () {
+    _setDeviceBooleans()
+    _setClassName()
   }
 
   // init
-  update()
+  _update()
 
   return categorizr;
 }));
