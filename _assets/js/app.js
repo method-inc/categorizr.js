@@ -2,6 +2,10 @@
 (function() {
   var $ = require('ender')
 
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1)
+  }
+
   // quick little tab controls
   var tabs = $('#main-menu a')
     , tabWindows = $('.tab-window')
@@ -23,7 +27,7 @@
 
   var toggler = $('#toggler')
   toggler.find('option[value='+$.categorizr()+']').attr('selected')
-  toggler.value($.categorizr())
+  toggler.val(capitalize($.categorizr()))
   setTimeout(function pageLoadGaq() {
     return (_gaq === undefined)
       ? setTimeout(function () {pageLoadGaq() }, 10)
