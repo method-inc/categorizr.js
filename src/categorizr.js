@@ -48,18 +48,16 @@
         var args = [].slice.call(arguments, 0)
 
         // previously categorizeType. arg1 = real, arg2 = fake
-        if (args.length === 2) {
-          if (device === args[0]) {
-            device = args[1]
-          }
+        if (args.length === 2 && device === args[0]) {
+          device = args[1]
+          _update()
         }
 
         // else set type
         else if (args.length === 1 && typeof args === 'string') {
           device = args[0]
+          _update()
         }
-
-        if (args.length) _update()
 
         // always return device. no args returns device
         return device
