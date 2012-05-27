@@ -20,11 +20,13 @@ your ender build with `ender add categorizr`.
 
 ## API
 
+### Methods
+
 * `categorizr()`
   * @return {String} current deviceType. (getter)
 * `categorizr(deviceType)`
   * @param {String} deviceType. Currently supports `tv`, `desktop`,
-  `tablet`, and `mobile`.
+  `tablet` and `mobile`.
   * @return {String} current deviceType.
 * `categorizr(actualDevice, categorizeAsDevice)`
   * @param {String} `actualDevice`. Target device you want to display as
@@ -33,6 +35,40 @@ your ender build with `ender add categorizr`.
   * @return {String} current deviceType.
   * Example. `categorize('tv', 'tablet')` -> will categorize all known
   smart-tv UA’s as a tablet device.
+* `categorizr.is(deviceType)`
+  * @param {String} `deviceType`. Currently supports `tv`, `desktop`,
+  `tablet` and `mobile`.
+  * @return {Bool} Returns boolean of current device matching argument
+  you specify.
+
+### Static Properties
+
+* `categorizr.isTv` {Bool}
+* `categorizr.isDesktop` {Bool}
+* `categorizr.isTablet` {Bool}
+* `categorizr.isMobile` {Bool}
+
+## Ender Bridge
+
+A minimal ender bridge is supported namespacing all of this inside the
+`ender` namespace. Example `ender.categorizr('mobile')` -> Set current
+instance to be mobile.
+
+## Roadmap
+
+* Get Brett Jankord’s feedback on the project.
+* Functional tests and community feedback.
+* UA and device testing.
+* Research integration with Modernizr.
+* Integration with node.js and express.
+* Provide extensibility API if community thinks that would be useful
+
+## Committing
+
+Edit `src/*.js` files.
+Run `make` in terminal.
+
+You’ll need the devDependencies installed for [smoosh.
 
 ## API if using version 0.2.2 and below
 
@@ -45,20 +81,4 @@ your ender build with `ender add categorizr`.
 `setType()` – sets current device type and updates html class.
 
 `categorizeType(real, faked)` – Sets a device type as another. E.g. `categorizr.categorizeType('tv', 'desktop')` sets all tv devices to be desktop.
-
-## Roadmap
-
-* Get Brett Jankord’s feedback on the project.
-* Functional tests and community feedback.
-* UA and device testing.
-* Research integration with Modernizr.
-* Integration with node.js and express.
-
-## Committing
-
-Edit `src/*.js` files.
-Run `make` in terminal.
-
-You’ll need the devDependencies installed for [smoosh.
-
 
