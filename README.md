@@ -15,6 +15,9 @@ library scripts.
 
 It works by adding a class to the html element of your current device.
 
+Add categorizr.js or categorizr.min.js to your library build or add to
+your ender build with `ender add categorizr`.
+
 ## API
 
 `is(deviceType)` – deviceType &lt;string&gt; of tv|desktop|tablet|mobile. Returns true/false based on current device.
@@ -30,7 +33,6 @@ It works by adding a class to the html element of your current device.
 ## Roadmap
 
 * Get Brett Jankord’s blessing on the port.
-* Publish to npm for ender consumption
 * Tests and community feedback
 * Integration with Modernizr
 * Integration with node.js and express
