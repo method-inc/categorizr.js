@@ -23,6 +23,10 @@
 
   var toggler = $('#toggler')
   toggler.find('option[value='+$.categorizr()+']').attr('selected')
-  _gaq.push(['_trackEvent', 'categorize.pageload', $.categorizr()])
+  setTimeout(function pageLoadGaq() {
+    return (_gaq === undefined)
+      ? setTimeout(function () {pageLoadGaq() }, 10)
+      : _gaq.push(['_trackEvent', 'categorize.pageload', $.categorizr()])
+  }, 10)
 
 }());

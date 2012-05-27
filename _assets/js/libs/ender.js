@@ -2226,7 +2226,7 @@
           }
 
           // else set type
-          else if (args.length === 1 && typeof args === 'string') {
+          else if (args.length === 1 && typeof args[0] === 'string') {
             device = args[0]
             _update()
           }
