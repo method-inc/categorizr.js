@@ -1,7 +1,7 @@
 {
     "name": "categorizr"
   , "description": "Device detection script to categorize devices as desktop, tv, tablet, or mobile."
-  , "version": "0.2.3"
+  , "version": "0.2.4"
   , "homepage": "https://github.com/iamdustan/categorizr.js"
   , "author": "Dustan Kasten <dustan@skookum.com> (http://twitter.com/iamdustan)"
   , "contributors": [
@@ -17,5 +17,6 @@
   }
   , "devDependencies": {
       "smoosh": "*"
+    , "buster": "*"
   }
 }

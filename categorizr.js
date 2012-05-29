@@ -5,9 +5,10 @@
   else if (typeof define === 'function' && typeof define.amd  === 'object') define(definition);
   else context[name] = definition(name, context);
 }('categorizr', this, function(name, context) {
+  if (!context.navigator && !context.request) return false
 
-  var ua = navigator.userAgent
-
+  var ua = context.navigator && context.navigator.userAgent ||
+           context.request && context.request.headers['user-agent']
       // isBrowser implementation based on https://github.com/jquery/jquery/blob/master/src/core.js
     , isBrowser = context != null && context == context.window
     , isNode = !isBrowser
@@ -56,7 +57,8 @@
         }
 
         // else set type
-        else if (args.length === 1 && typeof args === 'string') {
+        else if (args.length === 1 && typeof args[0] === 'string') {
+          // todo: can only set to registered deviceTypes
           device = args[0]
           _update()
         }
