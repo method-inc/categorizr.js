@@ -16,7 +16,6 @@
   var buster = require('buster')
     , categorizr = require('./../')
 
-  /*
   buster.testCase('properties', {
     'categorizr loaded': function () {
       assert(!!categorizr)
@@ -26,9 +25,9 @@
       assert(context !== context.window)
     }
   , 'isNode test returns false': function () {
-      //assert(context !+= context.window)
+      assert(context != null)
+      assert(context !== context.window)
     }
   })
-  */
 
 }))
