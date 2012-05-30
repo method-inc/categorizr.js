@@ -40,6 +40,9 @@ your ender build with `ender add categorizr`.
   `tablet` and `mobile`.
   * @return {Bool} Returns boolean of current device matching argument
   you specify.
+* `categorizr.test(ua)`
+  * @param {String} `ua`. User-agent string to test.
+  @return {String} Returns string of device type that it matches.
 
 ### Static Properties
 
@@ -56,19 +59,24 @@ instance to be mobile.
 
 ## Roadmap
 
-* Get Brett Jankord’s feedback on the project.
-* Functional tests and community feedback.
-* UA and device testing.
-* Research integration with Modernizr.
-* Integration with node.js and express.
+* Event emiting on deviceType change. (v0.2.6 most likely)
+* Integration with node.js and express. (v0.4)
 * Provide extensibility API if community thinks that would be useful
+* Research integration with Modernizr.
+* Get Brett Jankord’s feedback on the project.
 
 ## Committing
 
 Edit `src/*.js` files.
 Run `make` in terminal.
 
-You’ll need the devDependencies installed for [smoosh.
+You’ll need the devDependencies installed for smoosh (build tool) and buster (testing).
+
+## User Agent String Testing
+
+I know, I know. This is against “best practice” on the web, but really. Every company who wants to provide a targeted experience for a device does it. This is just making it easier for a front-end developer to integrate this into his development workflow.
+
+Create a fork and add any UA’s that you wish to the appriate file (`test/ua-strings/*.js`) and send a pull request.
 
 ## API if using version 0.2.2 and below
 
