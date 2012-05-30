@@ -3,18 +3,16 @@
   else if (typeof define === 'function' && typeof define.amd  === 'object') define(definition);
   else context[name] = definition(name, context);
 }('categorizr', this, function(name, context) {
-  var ua = context.navigator && context.navigator.userAgent ||
-           context.request && context.request.headers['user-agent'] ||
-           ''
       // isBrowser implementation based on https://github.com/jquery/jquery/blob/master/src/core.js
-    , isBrowser = context != null && context == context.window
+  var isBrowser = context != null && context == context.window
     , isNode = !isBrowser
     , docElement = isNode ? null : document.documentElement
 
     , deviceTypes = 'Tv Desktop Tablet Mobile'.split(' ')
 
+    , test = function (ua) {
                 // smart tv
-    , device =  ua.match(/GoogleTV|SmartTV|Internet.TV|NetCast|NETTV|AppleTV|boxee|Kylo|Roku|DLNADOC|CE\-HTML/i) ? 'tv'
+        return  ua.match(/GoogleTV|SmartTV|Internet.TV|NetCast|NETTV|AppleTV|boxee|Kylo|Roku|DLNADOC|CE\-HTML/i) ? 'tv'
                 // tv-based gaming console
               : ua.match(/Xbox|PLAYSTATION.3|Wii/i) ? 'tv'
                 // tablet
@@ -41,6 +39,10 @@
               : ua.match(/Bot|Crawler|Spider|Yahoo|ia_archiver|Covario-IDS|findlinks|DataparkSearch|larbin|Mediapartners-Google|NG-Search|Snappy|Teoma|Jeeves|TinEye/i) && !ua.match(/Mobile/i) ? 'desktop'
                 // assume it is a Mobile Device (mobile-first)
               : 'mobile'
+      }
+    , device = test( context.navigator ? context.navigator.userAgent
+                    : context.request ? context.request.headers['user-agent']
+                    : 'No User-Agent Provided' )
     , is = function (type) {
         return device === type
       }
@@ -65,6 +67,7 @@
       }
 
   categorizr.is = is
+  categorizr.test = test
 
   // set quick access properties
   // e.g. categorizr.isTv => false
