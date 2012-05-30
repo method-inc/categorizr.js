@@ -9,21 +9,23 @@
 
   var buster = require('buster')
     , categorizr = require('./../')
-    , uas = require('./user-agents.js')
+    , desktops = require('./ua-strings/desktop.js')
+    , tablets = require('./ua-strings/tablet.js')
+    , mobiles = require('./ua-strings/mobile.js')
 
   buster.testCase('Test UA\'s report expected device type', {
     'all desktops UA\'s report as desktops': function () {
-      uas.desktop.forEach(function (ua, i) {
+      desktops.forEach(function (ua, i) {
         assert(categorizr.test(ua) === 'desktop')
       })
     }
   , 'all tablet UA\'s report as desktops': function () {
-      uas.tablet.forEach(function (ua, i) {
-        assert(categorizr.test(ua) === 'mobile')
+      tablets.forEach(function (ua, i) {
+        assert(categorizr.test(ua) === 'tablet')
       })
     }
   , 'all mobile UA\'s report as desktops': function () {
-      uas.mobile.forEach(function (ua, i) {
+      mobiles.forEach(function (ua, i) {
         assert(categorizr.test(ua) === 'mobile')
       })
     }

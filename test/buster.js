@@ -1,6 +1,5 @@
 var config = module.exports
 
-/*
 config['browser.functional'] = {
   rootPath: '../'
 , environment: 'browser'
@@ -14,7 +13,6 @@ config['node.functional'] = {
 , sources: [ 'categorizr.js' ]
 , tests: [ 'test/node.functional.js' ]
 }
-*/
 
 config['node.user-agents'] = {
   rootPath: '../'
