@@ -3,6 +3,13 @@
 Categorizr.js is a port of bjankord’s categorizr.php script. There is planned
 support for use within node.js and express as well as with the browser.
 
+We are loosely following the semver system for versioning. Odd number
+releases will bring breaking API changes to existing code. They should
+be fully stable in their own right. Even numbered releases will be
+API-freeze and only bug-fixes.
+
+0.3.x is the latest release as of June 14, 2012.
+
 ## Demo
 
 Check out a demo at [skookum.github.com/categorizr.js](http://skookum.github.com/categorizr.js)
@@ -51,11 +58,44 @@ your ender build with `ender add categorizr`.
 * `categorizr.isTablet` {Bool}
 * `categorizr.isMobile` {Bool}
 
-## Ender Bridge
+### deviceChange Event
+
+With the Ender integration (see below), we now have a deviceChange event
+triggered on the window object.
+
+``` javascript
+$(window).bind('deviceChange', function(device) {
+  console.log(device.type)
+})
+```
+
+Please note that this API will most likely change (and become more
+flexible) in upcoming releases as we support additional libraries.
+
+## 3rd Party Integration
+
+### Ender
+
+Ender is the only fully tested library supported currently. (jQuery,
+Zepto, and prototype may or may not work currently. Support is coming.)
 
 A minimal ender bridge is supported namespacing all of this inside the
 `ender` namespace. Example `ender.categorizr('mobile')` -> Set current
-instance to be mobile.
+instance to be mobile. This assumes a selector library and event library
+included in your build.
+
+Additionally, since `0.2.5` `ender.is` has been renamed to
+`ender.isDeviceType` and `ender.test` has been renamed to
+`ender.testUserAgent` to prevent clashes with other libraries. (thanks
+@rvagg)
+
+The entirety of the API shown above is also available namedspaced inside
+of ender. E.g. `ender.categorizr('tablet')` will set the current
+deviceType to 'tablet'.
+
+* `ender.isDeviceType(deviceType)` @return {bool}
+* `ender.testUserAgent(UAString)` @return {string} deviceType
+
 
 ## Roadmap
 
