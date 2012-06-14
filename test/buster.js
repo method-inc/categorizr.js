@@ -38,7 +38,7 @@ config['node.user-agents'] = {
 config['integration.ender'] = {
   rootPath: '../'
 , environment: 'browser'
-, sources: [ 'test/libs/ender.js', 'categorizr.js' ]
+, sources: [ 'test/libs/ender.js' ]
 , tests: [ 'test/integration.ender.js' ]
 }
 

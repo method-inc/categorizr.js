@@ -13,7 +13,6 @@ buster.testCase('static properties', {
     assert(!!window['$'])
     assert(!!window['ender'])
     assert(!!window['ender']['categorizr'])
-    assert(window['ender']['categorizr'] === categorizr)
   }
 
   // categorizr static properties.
