@@ -63,13 +63,15 @@ buster.testCase('api::setter', {
 , 'set tvs as desktops': function () {
     categorizr('tv')
     categorizr('tv', 'desktop')
-    console.log(categorizr())
     assert(categorizr() === 'desktop')
     assert(categorizr.isDesktop === true)
     assert(categorizr.isMobile === false)
     assert(categorizr.isTv === false)
     assert(categorizr.isTablet === false)
   }
+})
 
+buster.testCase('events', {
+  '//changing deviceType should not trigger an event': function () {}
 })
 
