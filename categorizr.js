@@ -6,8 +6,10 @@
   else context[name] = definition(name, context);
 }('categorizr', this, function(name, context) {
       // isBrowser implementation based on https://github.com/jquery/jquery/blob/master/src/core.js
-  var isBrowser = context != null && context == context.window
+  var key // used in a loop below
+    , isBrowser = context != null && context == context.window
     , isNode = !isBrowser
+    , is$ = isBrowser && context.$
     , docElement = isNode ? null : document.documentElement
 
     , deviceTypes = 'Tv Desktop Tablet Mobile'.split(' ')
@@ -78,7 +80,10 @@
   //      categorizr.isMobile => false
   function _setDeviceBooleans () {
     var i = deviceTypes.length
-    while (i--) categorizr['is'+deviceTypes[i]] = is(deviceTypes[i].toLowerCase())
+    while (i--) {
+      categorizr['is'+deviceTypes[i]] = is(deviceTypes[i].toLowerCase())
+      if (is$) context.$['is'+deviceTypes[i]] = is(deviceTypes[i].toLowerCase())
+    }
   }
 
   function _setClassName () {
@@ -94,6 +99,14 @@
 
   // init
   _update()
+
+  if (is$) {
+    // put categorizr onto global $
+    for (key in categorizr)
+      if (Object.hasOwnProperty.call(categorizr, key))
+        context.$[key == 'test' ? 'testUserAgent' : key == 'is' ? 'isDeviceType' : key] = categorizr[key]
+    context.$.categorizr = categorizr
+  }
 
   return categorizr;
 }));
