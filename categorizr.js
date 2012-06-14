@@ -10,6 +10,11 @@
     , isBrowser = context != null && context == context.window
     , isNode = !isBrowser
     , is$ = isBrowser && context.$
+    , eventEmitter = (function () {
+        var e
+        if (is$) e = context.$('').trigger
+        return e
+      }())
     , docElement = isNode ? null : document.documentElement
 
     , deviceTypes = 'Tv Desktop Tablet Mobile'.split(' ')
@@ -95,6 +100,9 @@
   function _update () {
     _setDeviceBooleans()
     _setClassName()
+
+    // trigger deviceChange event
+    if (eventEmitter) context.$(context).trigger('deviceChange', [{ type: device }])
   }
 
   // init

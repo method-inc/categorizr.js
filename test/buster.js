@@ -3,6 +3,7 @@ var config = module.exports
 
 
 // Functional tests
+/*
 
 config['browser.functional'] = {
   rootPath: '../'
@@ -29,12 +30,10 @@ config['node.user-agents'] = {
 , tests: [ 'test/node.user-agents.js' ]
 }
 
-/*
 */
 
 
 // External Library Integration
-/*
 
 config['integration.ender'] = {
   rootPath: '../'
@@ -43,6 +42,7 @@ config['integration.ender'] = {
 , tests: [ 'test/integration.ender.js' ]
 }
 
+/*
 config['integration.jquery'] = {
   rootPath: '../'
 , environment: 'browser'
