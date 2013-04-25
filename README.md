@@ -130,3 +130,9 @@ Create a fork and add any UA’s that you wish to the appriate file (`test/ua-st
 
 `categorizeType(real, faked)` – Sets a device type as another. E.g. `categorizr.categorizeType('tv', 'desktop')` sets all tv devices to be desktop.
 
+## In the Wild
+
+* http://selector.pryd.es/
+* http://greylocku.com/
+
+
