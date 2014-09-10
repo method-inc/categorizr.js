@@ -1,5 +1,7 @@
 # Categorizr.js
 
+[![deprecated](http://badges.github.io/stability-badges/dist/deprecated.svg)](http://github.com/badges/stability-badges)
+
 Categorizr.js is a port of bjankord’s categorizr.php script. There is planned
 support for use within node.js and express as well as with the browser.
 
