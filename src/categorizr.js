@@ -10,7 +10,7 @@
     , is$ = isBrowser && context.$
     , eventEmitter = (function () {
         var e
-        if (is$) e = context.$('').trigger
+        if (is$) e = is$('').trigger
         return e
       }())
     , docElement = isNode ? null : document.documentElement
@@ -85,7 +85,7 @@
     var i = deviceTypes.length
     while (i--) {
       categorizr['is'+deviceTypes[i]] = is(deviceTypes[i].toLowerCase())
-      if (is$) context.$['is'+deviceTypes[i]] = is(deviceTypes[i].toLowerCase())
+      if (is$) is$['is'+deviceTypes[i]] = is(deviceTypes[i].toLowerCase())
     }
   }
 
@@ -100,7 +100,7 @@
     _setClassName()
 
     // trigger deviceChange event
-    if (eventEmitter) context.$(context).trigger('deviceChange', [{ type: device }])
+    if (eventEmitter && is$) is$(context).trigger('deviceChange', [{ type: device }])
   }
 
   // init
@@ -110,8 +110,8 @@
     // put categorizr onto global $
     for (key in categorizr)
       if (Object.hasOwnProperty.call(categorizr, key))
-        context.$[key == 'test' ? 'testUserAgent' : key == 'is' ? 'isDeviceType' : key] = categorizr[key]
-    context.$.categorizr = categorizr
+        is$[key == 'test' ? 'testUserAgent' : key == 'is' ? 'isDeviceType' : key] = categorizr[key]
+    is$.categorizr = categorizr
   }
 
   return categorizr;
