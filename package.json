@@ -1,13 +1,13 @@
 {
     "name": "categorizr"
   , "description": "Device detection script to categorize devices as desktop, tv, tablet, or mobile."
-  , "version": "0.3.1"
+  , "version": "0.3.2"
   , "homepage": "https://github.com/iamdustan/categorizr.js"
   , "author": "Skookum Digital Works"
   , "maintainers": [
       "Dustan Kasten <dustan@skookum.com> (http://iamdustan.com)"
     ]
-  , "license": "MIT",
+  , "license": "MIT"
   , "keywords": ["ender", "browser", "node", "device detection", "responsive"]
   , "main": "./categorizr.js"
   , "repository": {
