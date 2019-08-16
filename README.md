@@ -101,7 +101,7 @@ deviceType to 'tablet'.
 
 ## Roadmap
 
-* Event emiting on deviceType change. (v0.2.6 most likely)
+* Event emitting on deviceType change. (v0.2.6 most likely)
 * Integration with node.js and express. (v0.4)
 * Provide extensibility API if community thinks that would be useful
 * Research integration with Modernizr.
